@@ -343,3 +343,16 @@ body.is-hovering-hero .navbar {
 .project-card:hover .zoom-image {
     transform: scale(1.08);
 }
+
+/* ---------- CUSTOM CURSOR ---------- */
+body {
+    cursor: url('cursor-default.svg') 14 14, auto;
+}
+
+a, button, [role="button"], .clickable {
+    cursor: url('cursor-hover.svg') 14 14, pointer !important;
+}
+
+body:active, a:active, button:active, [role="button"]:active, .clickable:active {
+    cursor: url('cursor-click.svg') 14 14, pointer !important;
+}
