@@ -3,125 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A premium, robust portfolio experience">
-    <title>Portfolio | Premium Design</title>
-    <!-- Google Fonts: Curated to match the editorial references -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- Main Styles -->
+    <meta name="description" content="Portfolio of Aastha Singh">
+    <title>Aastha Singh | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Hover Background Video -->
-    <video class="hover-video" src="Background.mp4" autoplay loop muted playsinline></video>
 
-    <!-- Splash Screen Animation -->
-    <div class="splash-screen" id="splash">
-        <div class="splash-logo"></div>
-    </div>
-    
-    <div class="smooth-scroll-wrapper">
-        <header class="navbar">
-            <a href="#" class="nav-brand sans">( PORTFOLIO )</a>
-            <nav class="nav-links">
-                <a href="#work" class="nav-link sans">( WORK )</a>
-                <a href="#about" class="nav-link sans">( ABOUT )</a>
-                <a href="#contact" class="nav-link sans">( CONTACT )</a>
-            </nav>
-        </header>
+    <!-- Persistent Vertical Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand text-sans text-sub">
+            <a href="index.html">HOME</a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#work" class="sidebar-link text-sans text-sub">WORK</a>
+            <a href="#about" class="sidebar-link text-sans text-sub">ABOUT</a>
+            <a href="#contact" class="sidebar-link text-sans text-sub">CONTACT</a>
+        </nav>
+        <div class="sidebar-bottom text-sans text-sub">
+            © 2026
+        </div>
+    </aside>
 
-        <main>
-            <!-- Hero Section -->
-            <section class="hero section">
-                <h1 class="hero-title">
-                    <span class="clip-container"><span class="clip-up serif">CREATING</span></span>
-                    <span class="clip-container indent"><span class="clip-up sans">WEB</span></span>
-                    <span class="clip-container"><span class="clip-up serif">SOLUTIONS ..</span></span>
-                </h1>
-                <div class="hero-sub clip-container">
-                    <p class="clip-up body-text">CRAFTING EFFICIENT, RESPONSIVE, AND MAINTAINABLE WEB APPLICATIONS.</p>
+    <!-- Main Content wrapper -->
+    <div class="main-content">
+        
+        <!-- Intro Hero Section -->
+        <main id="home" class="section">
+            <div class="split-layout">
+                <div class="split-left">
+                    <p class="text-sans text-body animate-enter delay-3">
+                        Hi, I'm Aastha Singh.<br><br>
+                        A software developer proficient in React, Node, and solving problems with DSA. I craft efficient, responsive, and maintainable web applications. Everything I have done, small or big, has been a vital stepping stone for where I am today.
+                    </p>
                 </div>
-            </section>
-
-            <!-- Work Section -->
-            <section id="work" class="section work">
-                <div class="section-top border-bottom">
-                    <div class="section-label sans clip-container"><span class="clip-up">( WORK* )</span></div>
+                <div class="split-right">
+                    <!-- Nav links as huge serif words with italic hover effect -->
+                    <a href="#work" class="hover-italic-container text-serif text-massive animate-enter">
+                        <span class="italic-target">WORK</span>
+                    </a>
+                    <a href="#about" class="hover-italic-container text-serif text-massive animate-enter delay-1">
+                        <span class="italic-target">ABOUT</span>
+                    </a>
+                    <a href="#contact" class="hover-italic-container text-serif text-massive animate-enter delay-2">
+                        <span class="italic-target">CONTACT</span>
+                    </a>
                 </div>
-                
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <article class="project-card">
-                        <div class="project-img-wrapper zoom-container">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200" alt="E-Commerce Interface" class="zoom-image">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title sans clip-container"><span class="clip-up">CROCHET STORE</span></h3>
-                            <p class="project-roles body-text clip-container"><span class="clip-up">FULLSTACK — FREELANCE</span></p>
-                        </div>
-                    </article>
-                    
-                    <!-- Project 2 -->
-                    <article class="project-card offset">
-                        <div class="project-img-wrapper zoom-container">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200" alt="Code Architecture" class="zoom-image">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title sans clip-container"><span class="clip-up">CHAT APP</span></h3>
-                            <p class="project-roles body-text clip-container"><span class="clip-up">REACT — NODE.JS</span></p>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-card full-width">
-                        <div class="project-img-wrapper zoom-container">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2000" alt="Marketing Site" class="zoom-image">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title sans clip-container"><span class="clip-up">DSA VISUALIZER</span></h3>
-                            <p class="project-roles body-text clip-container"><span class="clip-up">REACT — ALGORITHMS</span></p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-            
-            <!-- About Section -->
-            <section id="about" class="section about">
-                <div class="section-top border-bottom">
-                    <div class="section-label sans clip-container"><span class="clip-up">( ABOUT )</span></div>
-                </div>
-                <div class="about-content">
-                    <div class="clip-container" style="display: block; overflow: hidden; max-width: 100%;">
-                        <h2 class="about-text serif clip-up" style="display: block; line-height: 1.2; padding-right: 0.1em; padding-bottom: 0.1em; box-sizing: content-box;">
-                            Hi, I'm Aastha Singh. A software developer proficient in React, Node, and solving problems with DSA.
-                        </h2>
-                    </div>
-                    <hr class="split-line">
-                </div>
-            </section>
+            </div>
         </main>
 
-        <!-- Footer Section -->
-        <footer id="contact" class="footer">
-            <div class="footer-top">
-                <h2 class="footer-title serif clip-container">
-                    <span class="clip-up">LET'S</span>
-                </h2>
-                <h2 class="footer-title sans indent clip-container">
-                    <span class="clip-up">TALK</span>
-                </h2>
+        <!-- Work Gallery Section (Dark ModeTriggered here via simple JS in future, or styling) -->
+        <section id="work" class="section" style="background-color: var(--bg-dark); color: var(--fg-dark);">
+            <div class="project-list">
+                
+                <article class="project-item">
+                    <a href="chat-app.html" class="project-title-link hover-italic-container">
+                        <span class="text-serif text-large italic-target">CHAT APP</span>
+                        <span class="text-sans text-sub">— REACT REAL-TIME</span>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="weather-app.html" class="project-title-link hover-italic-container">
+                        <span class="text-serif text-large italic-target">WEATHER APP</span>
+                        <span class="text-sans text-sub">— API FORECAST</span>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="dsa-visualizer.html" class="project-title-link hover-italic-container">
+                        <span class="text-serif text-large italic-target">DSA VISUALIZER</span>
+                        <span class="text-sans text-sub">— ALGORITHMS UI</span>
+                    </a>
+                </article>
+
+                <article class="project-item">
+                    <a href="ecommerce.html" class="project-title-link hover-italic-container">
+                        <span class="text-serif text-large italic-target">ECOMMERCE</span>
+                        <span class="text-sans text-sub">— FULLSTACK PORTAL</span>
+                    </a>
+                </article>
+
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-links">
-                    <a href="mailto:singhaastha456@gmail.com" class="footer-link sans">( EMAIL )</a>
-                    <a href="https://linkedin.com/in/aastha70203" class="footer-link sans">( LINKEDIN )</a>
-                    <a href="https://github.com/aastha70203" class="footer-link sans">( GITHUB )</a>
-                </div>
-                <p class="footer-copy body-text">© 2026. ALL RIGHTS RESERVED.</p>
-            </div>
-        </footer>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+             <div style="font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1.1; font-family: var(--font-serif); max-width: 800px; margin: 0 auto; text-align: center;">
+                 A software developer passionate about building seamless digital experiences. With a strong foundation in modern web technologies, I bridge the gap between complex problems and elegant solutions.
+             </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section trigger-on-scroll" style="background-color: var(--bg-dark); color: var(--fg-dark); text-align: center;">
+             <h2 class="text-serif text-massive mask-wrapper scroll-anim" style="display: block; margin-bottom: 5vh;">
+                  <span class="mask-content hover-italic-container"><span class="italic-target">HELLO.</span></span>
+             </h2>
+             <div style="display: flex; gap: 3rem; justify-content: center; margin-top: 5vh;">
+                 <a href="mailto:singhaastha456@gmail.com" class="text-sans text-sub hover-italic-container fade-up scroll-anim delay-1"><span class="italic-target">EMAIL</span></a>
+                 <a href="https://www.linkedin.com/in/aastha70203/" target="_blank" class="text-sans text-sub hover-italic-container fade-up scroll-anim delay-2"><span class="italic-target">LINKEDIN</span></a>
+                 <a href="https://github.com/aastha70203/" target="_blank" class="text-sans text-sub hover-italic-container fade-up scroll-anim delay-3"><span class="italic-target">GITHUB</span></a>
+             </div>
+        </section>
+
     </div>
 
     <!-- Main JavaScript -->

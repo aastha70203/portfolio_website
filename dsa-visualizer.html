@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Visualizer - Aastha Singh</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10vw; padding: 15vh 5vw; }
+        @media (max-width: 768px) { .project-intro-grid { grid-template-columns: 1fr; gap: 5vh; } }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand text-sans text-sub"><a href="index.html" class="hover-italic-container"><span class="italic-target">HOME</span></a></div>
+        <nav class="sidebar-nav">
+            <a href="index.html#work" class="sidebar-link text-sans text-sub">WORK</a>
+            <a href="index.html#about" class="sidebar-link text-sans text-sub">ABOUT</a>
+            <a href="index.html#contact" class="sidebar-link text-sans text-sub">CONTACT</a>
+        </nav>
+        <div class="sidebar-bottom text-sans text-sub">© 2026</div>
+    </aside>
+
+    <div class="main-content">
+        <!-- Project Header -->
+        <header class="project-detail-header animate-enter">
+            <h1 class="text-serif text-massive hover-italic-container"><span class="italic-target">DSA VISUALIZER</span></h1>
+        </header>
+
+        <!-- Project Intro -->
+        <section class="project-intro-grid animate-enter delay-1">
+            <div class="intro-left text-sans text-sub">
+                <p>SERVICES: ALGORITHMIC UI, EDUCATION TOOLING</p>
+                <p style="margin-top: 1rem;">YEAR: 2025</p>
+            </div>
+            <div class="intro-right text-sans text-body">
+                <p>
+                    An interactive educational platform designed to demystify complex Data Structures and Algorithms. By translating abstract code execution into visual animations, this tool helps learners build an intuitive understanding of computer science fundamentals.
+                </p>
+                <br>
+                <p>
+                    The architecture emphasizes precise state management, ensuring that every algorithmic step—from array sorting to graph traversals—is rendered smoothly and accurately without overwhelming the user interface.
+                </p>
+                <br>
+                <a href="https://dsa-visualizer-kappa-two.vercel.app/" target="_blank" class="text-serif text-large hover-italic-container" style="font-size: 2.5rem;">
+                    <span class="italic-target">VISIT SITE</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Project Images -->
+        <section class="project-images">
+            <img src="https://api.microlink.io/?url=https://dsa-visualizer-kappa-two.vercel.app/&screenshot=true&meta=false&embed=screenshot.url&waitFor=3s" alt="DSA Visualizer Preview">
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,53 +1,36 @@
-/**
- * Portfolio Interaction Scripts
- * Replicating high-end editorial experiences with pure Vanilla JS.
- */
+// Inject the page transition wipe dynamically
+const wipe = document.createElement('div');
+wipe.className = 'page-transition-wipe';
+document.body.appendChild(wipe);
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Splash Screen Logic
-    const splash = document.getElementById('splash');
-    
-    // Simulate initial loading time (in real world, wait for images)
-    setTimeout(() => {
-        splash.classList.add('is-hidden');
-        
-        // After splash hides, trigger the hero animations
-        setTimeout(() => {
-            const heroElements = document.querySelectorAll('.hero .clip-container');
-            heroElements.forEach(el => el.classList.add('is-visible'));
-        }, 500); // Wait bit before showing text for dramatic effect
-        
-    }, 1500); 
 
-    // 2. Intersection Observer for Scroll Reveals
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -10% 0px', // Trigger slightly before it hits bottom
-        threshold: 0.1
-    };
-
-    const animateOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add class to trigger CSS transition
-                entry.target.classList.add('is-visible');
-                // Optional: Stop observing once animated
-                observer.unobserve(entry.target);
+    // 1. Page Transition Interceptor
+    const links = document.querySelectorAll('a');
+    
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            // Ignore if it's not a real link, a blank target, or just an anchor link
+            if (!href || href === '#' || href.startsWith('#') || link.getAttribute('target') === '_blank') {
+                return; 
             }
-        });
-    }, observerOptions);
 
-    // Observe elements
-    const clipContainers = document.querySelectorAll('.clip-container, .zoom-container');
-    clipContainers.forEach(el => {
-        // Exclude hero elements since they are animated on load
-        if (!el.closest('.hero')) {
-            animateOnScroll.observe(el);
-        }
+            // It's an internal page navigation, let's intercept it
+            e.preventDefault();
+            
+            // Trigger wipe up
+            wipe.classList.add('is-active');
+
+            // Wait for wipe to finish (600ms matching CSS transition)
+            setTimeout(() => {
+                window.location.href = href;
+            }, 600);
+        });
     });
 
-    // 3. Smooth Scroll for Anchor Links (Optional polish)
+    // 2. Smooth Scroll for Anchor Links (e.g. #work)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -63,14 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Hero Hover Dark Mode Interaction
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        heroTitle.addEventListener('mouseenter', () => {
-            document.body.classList.add('is-hovering-hero');
+    // 3. Intersection Observer for Scroll Animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px', // Trigger slightly before hitting the bottom
+        threshold: 0.1
+    };
+
+    const animateOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Optional: only animate once
+            }
         });
-        heroTitle.addEventListener('mouseleave', () => {
-            document.body.classList.remove('is-hovering-hero');
-        });
-    }
+    }, observerOptions);
+
+    const scrollElements = document.querySelectorAll('.scroll-anim');
+    scrollElements.forEach(el => {
+        animateOnScroll.observe(el);
+    });
+
 });
